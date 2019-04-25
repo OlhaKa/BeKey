@@ -1,0 +1,46 @@
+<div class="header">
+  <h2>
+    {{user.name}}
+  </h2>
+  <div class="photo">
+
+  </div>
+</div>
+
+<div class="user-info">
+<table>
+  <tr>
+    <td>Balance</td>
+    <td>{{user.balance}}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{user.age}}</td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>{{user.phone}}</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>{{user.email}}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{user.address}}</td>
+  </tr>
+  <tr>
+    <td>Date of registration</td>
+    <td>{{user.registered | registrationFormat | date: 'MM-dd-yyyy hh-mm'}}
+    </td>
+  </tr>
+  <tr>
+    <td>Tags</td>
+    <td>{{user.tags}}</td>
+  </tr>
+  <tr>
+    <td>About</td>
+    <td>{{user.about}}</td>
+  </tr>
+</table>
+</div>
