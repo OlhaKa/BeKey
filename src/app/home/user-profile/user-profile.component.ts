@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Users from './../../resources/users.json';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../userModel.js';
 
@@ -11,7 +11,7 @@ import { User } from '../userModel.js';
 })
 export class UserProfileComponent implements OnInit {
 
-  usersList: any[] = Users;
+  usersList: any[];
   user: User;
   userId: string;
   
