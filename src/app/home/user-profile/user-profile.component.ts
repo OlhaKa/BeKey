@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../userModel.js';
+import { UsersService } from '../users.service.js';
 
 
 @Component({
@@ -13,32 +14,24 @@ export class UserProfileComponent implements OnInit {
 
   usersList: any[];
   user: User;
-  userId: string;
-  
+  userId: any;
+
   constructor(private route: ActivatedRoute,
-              private _router: Router) { }
+    private _router: Router,
+    private _usersService: UsersService) { }
 
   ngOnInit() {
-    
     this.route.params.subscribe((params) => {
-      if (params) {
-        this.userId = params['id'];
-        this.user = this.getUserById();
-      } else {
-        this._router.navigate(['/']);
-      }
-
-  });
-
-  
+      this.userId = params['id'];
+      this._usersService.getUserProfile(this.userId).subscribe((res) => {
+        this.user = res;
+      })
+      console.log(this.user)
+    });
   }
-  getUserById() {
-    return this.usersList.find(user => user._id === this.userId);
+
+  getUserInfo() {
+    
   }
-  
-
-
-
-
 
 }

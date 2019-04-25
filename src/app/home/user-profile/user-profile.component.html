@@ -1,6 +1,6 @@
 <div class="header">
   <h2>
-    {{user.name}}
+  <!-- {{user.name}} -->
   </h2>
   <div class="photo">
 
@@ -11,36 +11,37 @@
 <table>
   <tr>
     <td>Balance</td>
-    <td>{{user.balance}}</td>
+    <td>{{user?.balance}}</td>
   </tr>
   <tr>
     <td>Age</td>
-    <td>{{user.age}}</td>
+    <td>{{user?.age}}</td>
   </tr>
   <tr>
     <td>Phone</td>
-    <td>{{user.phone}}</td>
+    <td>{{user?.phone}}</td>
   </tr>
   <tr>
     <td>Email</td>
-    <td>{{user.email}}</td>
+    <td>{{user?.email}}</td>
   </tr>
   <tr>
     <td>Address</td>
-    <td>{{user.address}}</td>
+    <td>{{user?.address}}</td>
   </tr>
   <tr>
     <td>Date of registration</td>
-    <td>{{user.registered | registrationFormat | date: 'MM-dd-yyyy hh-mm'}}
+    <td>{{user?.registered }}
+        <!-- {{user?.registered | registrationFormat | date: 'MM-dd-yyyy hh-mm'}} -->
     </td>
   </tr>
   <tr>
     <td>Tags</td>
-    <td>{{user.tags}}</td>
+    <td>{{user?.tags}}</td>
   </tr>
   <tr>
     <td>About</td>
-    <td>{{user.about}}</td>
+    <td>{{user?.about}}</td>
   </tr>
 </table>
 </div>

@@ -16,4 +16,8 @@ export class UsersService {
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.url)
   }
+
+  getUserProfile(hash:string): Observable<User> {
+    return this.http.get<User>(this.url + '?_id=' + hash);
+  }
 }
