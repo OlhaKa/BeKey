@@ -9,4 +9,19 @@ button.close {
     &:focus {
         outline: none
     }
+    
+}
+
+button.btn-save {
+    &:disabled{
+        -moz-box-shadow: 0px 8px 14px -9px #808080;
+        -webkit-box-shadow: 0px 8px 14px -9px #808080;
+        box-shadow: 0px 8px 14px -9px #808080;
+        background: none;
+        background-color: grey;
+    }
+}
+
+.form-control.ng-invalid.ng-touched {
+    border: 1px solid red;
 }

@@ -33,9 +33,8 @@ export class HomeComponent implements OnInit {
   openFormModal() {
     const modalRef = this.modalService.open(FormModalComponent);
     
-    modalRef.result.then((result) => {
-      console.log(result);
-      this.getUsersList();
+    modalRef.result.then((result) => {  
+        this.getUsersList();
     }).catch((error) => {
       console.log(error);
     });

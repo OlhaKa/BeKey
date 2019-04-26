@@ -5,38 +5,36 @@
   <div class="col">
     <table class="table table-striped">
       <thead>
-      <tr>
-        <th scope="col">name</th>
-        <th scope="col" sortable="name" (sort)="onSort($event)">age</th>
-        <th scope="col" sortable="area" (sort)="onSort($event)">balance</th>
-        <th scope="col" sortable="population" (sort)="onSort($event)">phone</th>
-        <th>email</th>
-        <th>action</th>
-      </tr>
+        <tr>
+          <th scope="col">name</th>
+          <th scope="col" sortable="name" (sort)="onSort($event)">age</th>
+          <th scope="col" sortable="area" (sort)="onSort($event)">balance</th>
+          <th scope="col" sortable="population" (sort)="onSort($event)">phone</th>
+          <th>email</th>
+          <th>action</th>
+        </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of usersList">
-        <!-- <th scope="row"></th> -->
-        <td 
-          class="name"
-          [routerLink]="['/user-profile', user._id]">
-          {{user.name}}
-        </td>
-        <td>{{user.age}}</td>
-        <td>{{user.balance}}</td>
-        <td>{{user.phone}}</td>
-        <td>{{user.email}}</td>
-        <td><a (click)="deleteUser(user.id, i)"
-                class="del-btn">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </a>
-        </td>
-      </tr>
+        <tr *ngFor="let user of usersList">
+          <td class="name" [routerLink]="['/user-profile', user.id]">
+            {{user.name}}
+          </td>
+          <td>{{user.age}}</td>
+          <td>{{user.balance}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.email}}</td>
+          <td><a (click)="deleteUser(user.id, i)" class="del-btn">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<button (click)="openFormModal()"
-    class="add-btn">add user</button>
-  
+
+<div class="btn-row">
+  <button (click)="openFormModal()" class="add-btn">add user
+  </button>
+</div>

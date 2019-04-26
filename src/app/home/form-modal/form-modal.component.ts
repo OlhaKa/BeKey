@@ -42,7 +42,6 @@ export class FormModalComponent {
     this.user = this.userForm.value;
     console.log(this.user);
     this.usersService.createUser(this.user).subscribe( res =>{
-
     }, (err) => {
       console.log(err)
     })

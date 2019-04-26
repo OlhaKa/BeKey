@@ -25,6 +25,7 @@ export class UserProfileComponent implements OnInit {
       this.userId = params['id'];
       this.getUserInfo();
     });
+    
   }
 
   getUserInfo() {
@@ -32,4 +33,5 @@ export class UserProfileComponent implements OnInit {
       this.user = res;
     });
   }
+  
 }
