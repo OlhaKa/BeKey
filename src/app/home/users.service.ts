@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './userModel';
 
@@ -17,7 +17,16 @@ export class UsersService {
     return this.http.get<User[]>(this.url)
   }
 
-  getUserProfile(hash:string): Observable<User> {
-    return this.http.get<User>(this.url + '?_id=' + hash);
+  getUserProfile(id: string): Observable<User> {
+    return this.http.get<User>(this.url + '?_id=' + id);
+  }
+
+  createUser(user: User): Observable<User> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<User>(this.url, user, { headers: headers, observe: 'body' });
+  }
+
+  delete(id: number): Observable<HttpResponse<any>> {
+    return this.http.delete<any>(this.url + id, {observe: 'response'});
   }
 }

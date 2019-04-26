@@ -1,0 +1,12 @@
+@import 'src/styles.scss';
+
+button.close {
+    &::after {
+        position: relative;
+        content: '\f00d ';
+        font-family: FontAwesome
+    }
+    &:focus {
+        outline: none
+    }
+}

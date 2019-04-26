@@ -12,7 +12,7 @@ import { UsersService } from '../users.service.js';
 })
 export class UserProfileComponent implements OnInit {
 
-  usersList: any[];
+  usersList: User[];
   user: User;
   userId: any;
 
@@ -23,15 +23,13 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.userId = params['id'];
-      this._usersService.getUserProfile(this.userId).subscribe((res) => {
-        this.user = res;
-      })
-      console.log(this.user)
+      this.getUserInfo();
     });
   }
 
   getUserInfo() {
-    
+    this._usersService.getUserProfile(this.userId).subscribe((res: User) => {
+      this.user = res;
+    });
   }
-
 }

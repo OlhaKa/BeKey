@@ -1,0 +1,42 @@
+<div class="modal-header">
+  <h4 class="modal-title">User profile</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="userForm">
+    <div class="modal-boy">
+      <div class="container">
+        <div class="form-group">
+          <label for="name">Username</label>
+          <input type="text" class="form-control" formControlName="name" />
+          <span ></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Email</label>
+          <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="phone" class="form-control" formControlName="phone">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="age" class="form-control" formControlName="age">
+        </div>
+      </div>
+    </div>
+    <pre>{{userForm.controls['name'].valid}}</pre>
+    <pre>{{userForm.controls['email'].valid}}</pre>
+    <pre>{{userForm.controls['phone'].valid}}</pre>
+    <pre>{{userForm.controls['age'].valid}}</pre>
+    <div class="modal-footer">
+      <button class="btn btn-success" (click)="createUser()" [disabled]="!userForm.valid">
+        SAVE
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './userModel';
 import { UsersService } from './users.service';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { FormModalComponent } from './form-modal/form-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,11 @@ export class HomeComponent implements OnInit {
 
   public usersList:User[];
 
-  constructor(private _usersService: UsersService) { }
+  constructor(private _usersService: UsersService,
+              private modalService: NgbModal,
+              config: NgbModalConfig) { 
+                config.backdrop = 'static';
+              }
 
   ngOnInit() {
     this.getUsersList();
@@ -23,5 +29,16 @@ export class HomeComponent implements OnInit {
             this.usersList = response;
         });
   }
+
+  openFormModal() {
+    const modalRef = this.modalService.open(FormModalComponent);
+    
+    modalRef.result.then((result) => {
+      console.log(result);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
 
 }
