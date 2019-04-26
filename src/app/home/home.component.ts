@@ -35,10 +35,17 @@ export class HomeComponent implements OnInit {
     
     modalRef.result.then((result) => {
       console.log(result);
+      this.getUsersList();
     }).catch((error) => {
       console.log(error);
     });
   }
+
+  deleteUser(id:number, index:number) {
+    this._usersService.delete(id).subscribe(response =>{
+      this.getUsersList();
+    });
+ }
 
 
 }

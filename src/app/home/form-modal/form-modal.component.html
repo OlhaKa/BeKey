@@ -26,12 +26,8 @@
         </div>
       </div>
     </div>
-    <pre>{{userForm.controls['name'].valid}}</pre>
-    <pre>{{userForm.controls['email'].valid}}</pre>
-    <pre>{{userForm.controls['phone'].valid}}</pre>
-    <pre>{{userForm.controls['age'].valid}}</pre>
     <div class="modal-footer">
-      <button class="btn btn-success" (click)="createUser()" [disabled]="!userForm.valid">
+      <button class="btn-save" (click)="createUser()" [disabled]="!userForm.valid">
         SAVE
       </button>
     </div>

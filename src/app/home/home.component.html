@@ -26,12 +26,17 @@
         <td>{{user.balance}}</td>
         <td>{{user.phone}}</td>
         <td>{{user.email}}</td>
-        <td></td>
+        <td><a (click)="deleteUser(user.id, i)"
+                class="del-btn">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </a>
+        </td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<button (click)="openFormModal()">add user</button>
+<button (click)="openFormModal()"
+    class="add-btn">add user</button>
   
